@@ -26,7 +26,8 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:layout_margin="8dp">
 
                     <TextView
                         android:id="@+id/trip_list_item_departure_station_name"
@@ -45,6 +46,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentStart="true"
+                            android:layout_marginHorizontal="8dp"
                             android:src="@drawable/ic_baseline_calendar_month_24" />
 
                         <TextView
@@ -53,13 +55,15 @@
                             android:layout_height="wrap_content"
                             android:layout_centerVertical="true"
                             android:layout_toEndOf="@+id/trip_list_item_departure_station_calendar_icon"
-                            tools:text="1.1.1970" />
+                            tools:text="1.1.1970"
+                            android:textSize="18sp"/>
 
                         <ImageView
                             android:id="@+id/trip_list_item_departure_station_clock_icon"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentEnd="true"
+                            android:layout_marginHorizontal="8dp"
                             android:src="@drawable/ic_baseline_access_time_24" />
 
                         <TextView
@@ -68,7 +72,8 @@
                             android:layout_height="wrap_content"
                             android:layout_centerVertical="true"
                             android:layout_toStartOf="@+id/trip_list_item_departure_station_clock_icon"
-                            tools:text="23:56" />
+                            tools:text="23:56"
+                            android:textSize="18sp"/>
                     </RelativeLayout>
 
                 </LinearLayout>
@@ -83,7 +88,8 @@
                     android:layout_height="wrap_content"
                     android:src="@drawable/ic_baseline_arrow_downward_24"
                     android:layout_centerInParent="true"
-                    android:id="@+id/trip_list_item_arrow" />
+                    android:id="@+id/trip_list_item_arrow"
+                    android:layout_marginHorizontal="16dp"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -91,7 +97,8 @@
                     android:layout_centerVertical="true"
                     android:layout_toStartOf="@+id/trip_list_item_arrow"
                     tools:text="12min"
-                    android:id="@+id/trip_list_item_duration_text"/>
+                    android:id="@+id/trip_list_item_duration_text"
+                    android:textSize="24sp"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -99,7 +106,8 @@
                     android:layout_centerVertical="true"
                     android:layout_toEndOf="@+id/trip_list_item_arrow"
                     tools:text="1.2km"
-                    android:id="@+id/trip_list_item_distance_text"/>
+                    android:id="@+id/trip_list_item_distance_text"
+                    android:textSize="24sp"/>
 
             </RelativeLayout>
 
@@ -112,7 +120,8 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:layout_margin="8dp">
 
                     <TextView
                         android:id="@+id/trip_list_item_return_station_name"
@@ -131,7 +140,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentStart="true"
-                            android:src="@drawable/ic_baseline_calendar_month_24" />
+                            android:src="@drawable/ic_baseline_calendar_month_24"
+                            android:layout_marginHorizontal="8dp"/>
 
                         <TextView
                             android:id="@+id/trip_list_item_return_station_date_text"
@@ -139,14 +149,16 @@
                             android:layout_height="wrap_content"
                             android:layout_centerVertical="true"
                             android:layout_toEndOf="@+id/trip_list_item_return_station_calendar_icon"
-                            tools:text="1.1.1970" />
+                            tools:text="1.1.1970"
+                            android:textSize="18sp"/>
 
                         <ImageView
                             android:id="@+id/trip_list_item_return_station_clock_icon"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentEnd="true"
-                            android:src="@drawable/ic_baseline_access_time_24" />
+                            android:src="@drawable/ic_baseline_access_time_24"
+                            android:layout_marginHorizontal="8dp"/>
 
                         <TextView
                             android:id="@+id/trip_list_item_return_station_time_text"
@@ -154,7 +166,8 @@
                             android:layout_height="wrap_content"
                             android:layout_centerVertical="true"
                             android:layout_toStartOf="@+id/trip_list_item_return_station_clock_icon"
-                            tools:text="23:56" />
+                            tools:text="23:56"
+                            android:textSize="18sp"/>
                     </RelativeLayout>
 
                 </LinearLayout>

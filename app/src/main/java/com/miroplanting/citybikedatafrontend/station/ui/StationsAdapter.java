@@ -1,4 +1,4 @@
-package com.miroplanting.citybikedatafrontend.station;
+package com.miroplanting.citybikedatafrontend.station.ui;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.miroplanting.citybikedatafrontend.R;
+import com.miroplanting.citybikedatafrontend.station.data.Station;
 
 public class StationsAdapter extends PagingDataAdapter<Station, StationsAdapter.StationViewHolder> {
     public static final int LOADING_ITEM = 0, TRIP_ITEM = 1;

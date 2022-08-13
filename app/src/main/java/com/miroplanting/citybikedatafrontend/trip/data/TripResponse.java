@@ -1,8 +1,8 @@
-package com.miroplanting.citybikedatafrontend.trip;
+package com.miroplanting.citybikedatafrontend.trip.data;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
-import com.miroplanting.citybikedatafrontend.trip.Trip;
+import com.miroplanting.citybikedatafrontend.trip.data.Trip;
 
 import java.util.List;
 

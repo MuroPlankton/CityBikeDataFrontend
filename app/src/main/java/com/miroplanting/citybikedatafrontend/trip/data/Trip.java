@@ -1,10 +1,10 @@
-package com.miroplanting.citybikedatafrontend.trip;
+package com.miroplanting.citybikedatafrontend.trip.data;
 
 import androidx.annotation.Nullable;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
-import com.miroplanting.citybikedatafrontend.station.Station;
+import com.miroplanting.citybikedatafrontend.station.data.Station;
 
 public class Trip {
     @SerializedName("id")

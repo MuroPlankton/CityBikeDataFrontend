@@ -1,8 +1,9 @@
-package com.miroplanting.citybikedatafrontend;
+package com.miroplanting.citybikedatafrontend.api;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.util.Log;
+
+import com.miroplanting.citybikedatafrontend.api.APIInterface;
 
 import java.util.concurrent.TimeUnit;
 
@@ -14,7 +15,6 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class APIClient {
     static APIInterface apiInterface;
-    private static final String TAG = "APIClient";
 
     public static APIInterface getApiInterface(Context context) {
 
@@ -22,12 +22,11 @@ public class APIClient {
             HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
             interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
             OkHttpClient client = new OkHttpClient.Builder().connectTimeout(5, TimeUnit.SECONDS)
-                    .writeTimeout(5, TimeUnit.SECONDS). readTimeout(5, TimeUnit.SECONDS)
+                    .writeTimeout(5, TimeUnit.SECONDS).readTimeout(5, TimeUnit.SECONDS)
                     .addInterceptor(interceptor).build();
 
             SharedPreferences settings = context.getSharedPreferences("apiInfo", 0);
             String apiAddress = settings.getString("apiURL", "");
-            Log.d("APIClient", "ApiURL: " + apiAddress);
 
             Retrofit retrofit = new Retrofit.Builder().baseUrl(apiAddress)
                     .addConverterFactory(GsonConverterFactory.create())
@@ -35,7 +34,6 @@ public class APIClient {
 
             apiInterface = retrofit.create(APIInterface.class);
         }
-        Log.d(TAG, "getApiInterface: I ran");
         return apiInterface;
     }
 }

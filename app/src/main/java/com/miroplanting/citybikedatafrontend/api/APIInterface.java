@@ -1,7 +1,7 @@
-package com.miroplanting.citybikedatafrontend;
+package com.miroplanting.citybikedatafrontend.api;
 
-import com.miroplanting.citybikedatafrontend.station.StationResponse;
-import com.miroplanting.citybikedatafrontend.trip.TripResponse;
+import com.miroplanting.citybikedatafrontend.station.data.StationResponse;
+import com.miroplanting.citybikedatafrontend.trip.data.TripResponse;
 
 import io.reactivex.rxjava3.core.Single;
 import retrofit2.http.GET;

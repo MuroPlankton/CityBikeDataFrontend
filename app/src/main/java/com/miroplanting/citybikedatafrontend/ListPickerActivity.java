@@ -8,8 +8,8 @@ import android.widget.Button;
 
 import androidx.annotation.Nullable;
 
-import com.miroplanting.citybikedatafrontend.station.StationListActivity;
-import com.miroplanting.citybikedatafrontend.trip.TripListActivity;
+import com.miroplanting.citybikedatafrontend.station.ui.StationListActivity;
+import com.miroplanting.citybikedatafrontend.trip.ui.TripListActivity;
 
 public class ListPickerActivity extends Activity {
 

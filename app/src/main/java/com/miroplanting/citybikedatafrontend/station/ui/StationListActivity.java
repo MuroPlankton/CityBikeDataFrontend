@@ -1,4 +1,4 @@
-package com.miroplanting.citybikedatafrontend.station;
+package com.miroplanting.citybikedatafrontend.station.ui;
 
 import android.os.Bundle;
 
@@ -9,6 +9,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.miroplanting.citybikedatafrontend.DataLoadStateAdapter;
 import com.miroplanting.citybikedatafrontend.R;
+import com.miroplanting.citybikedatafrontend.station.StationComparator;
+import com.miroplanting.citybikedatafrontend.station.StationViewModel;
 
 import autodispose2.AutoDispose;
 import autodispose2.androidx.lifecycle.AndroidLifecycleScopeProvider;

@@ -1,4 +1,4 @@
-package com.miroplanting.citybikedatafrontend.station;
+package com.miroplanting.citybikedatafrontend.station.data;
 
 import android.content.Context;
 
@@ -7,8 +7,7 @@ import androidx.annotation.Nullable;
 import androidx.paging.PagingState;
 import androidx.paging.rxjava3.RxPagingSource;
 
-import com.miroplanting.citybikedatafrontend.APIClient;
-import com.miroplanting.citybikedatafrontend.trip.Trip;
+import com.miroplanting.citybikedatafrontend.api.APIClient;
 
 import java.util.List;
 
