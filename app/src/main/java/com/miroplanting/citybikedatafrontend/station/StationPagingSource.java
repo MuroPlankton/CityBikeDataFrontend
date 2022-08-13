@@ -8,6 +8,7 @@ import androidx.paging.PagingState;
 import androidx.paging.rxjava3.RxPagingSource;
 
 import com.miroplanting.citybikedatafrontend.APIClient;
+import com.miroplanting.citybikedatafrontend.trip.Trip;
 
 import java.util.List;
 
@@ -18,13 +19,22 @@ public class StationPagingSource extends RxPagingSource<Integer, Station> {
     private Context context;
 
     public StationPagingSource(Context context) {
+        super();
         this.context = context;
     }
 
     @Nullable
     @Override
     public Integer getRefreshKey(@NonNull PagingState<Integer, Station> pagingState) {
-        return 0;
+        if (pagingState.getAnchorPosition() != null) {
+            LoadResult.Page<Integer, Station> page = pagingState.closestPageToPosition(pagingState.getAnchorPosition());
+            if (page.getPrevKey() != null) {
+                return pagingState.getAnchorPosition() - 1;
+            }else if (page.getNextKey() == null) {
+                return pagingState.getAnchorPosition() + 1;
+            }
+        }
+        return null;
     }
 
     @NonNull

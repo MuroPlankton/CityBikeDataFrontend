@@ -1,4 +1,4 @@
-package com.miroplanting.citybikedatafrontend.trip;
+package com.miroplanting.citybikedatafrontend;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -13,15 +13,13 @@ import androidx.paging.LoadState;
 import androidx.paging.LoadStateAdapter;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.miroplanting.citybikedatafrontend.R;
-
-public class TripsLoadStateAdapter extends LoadStateAdapter<TripsLoadStateAdapter.LoadStateViewHolder> {
-    private View.OnClickListener tripRetryCallback;
+public class DataLoadStateAdapter extends LoadStateAdapter<DataLoadStateAdapter.LoadStateViewHolder> {
+    private View.OnClickListener retryCallback;
 
     private static final String TAG = "TripsLoadStateAdapter";
 
-    public TripsLoadStateAdapter(View.OnClickListener tripRetryCallback) {
-        this.tripRetryCallback = tripRetryCallback;
+    public DataLoadStateAdapter(View.OnClickListener retryCallback) {
+        this.retryCallback = retryCallback;
         Log.d(TAG, "TripsLoadStateAdapter: I ran");
     }
 
@@ -35,29 +33,29 @@ public class TripsLoadStateAdapter extends LoadStateAdapter<TripsLoadStateAdapte
     @Override
     public LoadStateViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, @NonNull LoadState loadState) {
         Log.d(TAG, "onCreateViewHolder: I ran");
-        return new LoadStateViewHolder(viewGroup, tripRetryCallback);
+        return new LoadStateViewHolder(viewGroup, retryCallback);
     }
 
     public static class LoadStateViewHolder extends RecyclerView.ViewHolder {
         private ProgressBar progressBar;
-        private TextView tripErrorMSG;
-        private Button tripRetry;
+        private TextView errorMSG;
+        private Button retry;
 
-        public LoadStateViewHolder(@NonNull ViewGroup parent, View.OnClickListener tripRetryCallback) {
+        public LoadStateViewHolder(@NonNull ViewGroup parent, View.OnClickListener retryCallback) {
             super(LayoutInflater.from(parent.getContext()).inflate(R.layout.load_state_item, parent, false));
 
             progressBar = parent.findViewById(R.id.progressBar);
-            tripErrorMSG = parent.findViewById(R.id.errorMsg);
-            tripRetry = parent.findViewById(R.id.retryButton);
+            errorMSG = parent.findViewById(R.id.errorMsg);
+            retry = parent.findViewById(R.id.retryButton);
 
-            tripRetry.setOnClickListener(tripRetryCallback);
+            retry.setOnClickListener(retryCallback);
             Log.d(TAG, "LoadStateViewHolder: I ran");
         }
 
         public void bind(LoadState loadState) {
             if (loadState instanceof LoadState.Error) {
                 LoadState.Error loadStateError = (LoadState.Error) loadState;
-                tripErrorMSG.setText(loadStateError.getError().getLocalizedMessage());
+                errorMSG.setText(loadStateError.getError().getLocalizedMessage());
                 setWidgetVisibility(View.VISIBLE);
             }
             setWidgetVisibility(View.GONE);
@@ -66,8 +64,8 @@ public class TripsLoadStateAdapter extends LoadStateAdapter<TripsLoadStateAdapte
 
         private void setWidgetVisibility(int visible) {
             progressBar.setVisibility(visible);
-            tripRetry.setVisibility(visible);
-            tripErrorMSG.setVisibility(visible);
+            retry.setVisibility(visible);
+            errorMSG.setVisibility(visible);
             Log.d(TAG, "setWidgetVisibility: I ran");
         }
     }

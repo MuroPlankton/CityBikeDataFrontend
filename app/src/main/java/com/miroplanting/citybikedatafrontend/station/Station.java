@@ -6,7 +6,7 @@ import com.google.gson.annotations.SerializedName;
 public class Station {
     @SerializedName("id")
     @Expose
-    private int id;
+    private Integer id;
 
     @SerializedName("nimi")
     @Expose
@@ -38,21 +38,21 @@ public class Station {
 
     @SerializedName("capacity")
     @Expose
-    private int capacity;
+    private Integer capacity;
 
     @SerializedName("x")
     @Expose
-    private double x;
+    private Double x;
 
     @SerializedName("y")
     @Expose
-    private double y;
+    private Double y;
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -112,27 +112,27 @@ public class Station {
         this.operator = operator;
     }
 
-    public int getCapacity() {
+    public Integer getCapacity() {
         return capacity;
     }
 
-    public void setCapacity(int capacity) {
+    public void setCapacity(Integer capacity) {
         this.capacity = capacity;
     }
 
-    public double getX() {
+    public Double getX() {
         return x;
     }
 
-    public void setX(double x) {
+    public void setX(Double x) {
         this.x = x;
     }
 
-    public double getY() {
+    public Double getY() {
         return y;
     }
 
-    public void setY(double y) {
+    public void setY(Double y) {
         this.y = y;
     }
 }

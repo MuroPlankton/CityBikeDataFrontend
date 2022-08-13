@@ -16,6 +16,6 @@
 
     <style name="SplashScreenTheme" parent="Theme.AppCompat.NoActionBar">
         <item name="windowNoTitle">true</item>
-        <item name="android:windowBackground">@drawable/ic_baseline_pedal_bike_24</item>
+        <item name="android:windowBackground">@drawable/ic_baseline_pedal_bike_64</item>
     </style>
 </resources>

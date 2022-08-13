@@ -12,6 +12,7 @@ import androidx.paging.PagingData;
 import androidx.paging.rxjava3.PagingRx;
 
 import io.reactivex.rxjava3.core.Flowable;
+import kotlin.OptIn;
 import kotlinx.coroutines.CoroutineScope;
 
 public class StationViewModel extends AndroidViewModel {
@@ -24,6 +25,7 @@ public class StationViewModel extends AndroidViewModel {
         Log.d(TAG, "StationViewModel: I ran");
     }
 
+    @OptIn(markerClass = kotlinx.coroutines.ExperimentalCoroutinesApi.class)
     private void init() {
         StationPagingSource stationPagingSource = new StationPagingSource(getApplication().getApplicationContext());
 
