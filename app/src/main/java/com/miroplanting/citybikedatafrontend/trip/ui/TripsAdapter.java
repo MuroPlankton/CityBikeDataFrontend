@@ -37,15 +37,15 @@ public class TripsAdapter extends PagingDataAdapter<Trip, TripsAdapter.TripViewH
         Station departureStation = trip.getDepartureStation();
         String dtString = trip.getDepartureTime();
         holder.departureStationName.setText(departureStation.getNimi());
-        holder.departureTime.setText(dtString.substring(11, 18));
-        holder.departureDate.setText(dtString.substring(0, 9));
+        holder.departureTime.setText(dtString.substring(11, 19));
+        holder.departureDate.setText(dtString.substring(0, 10));
 
         Station returnStation = trip.getReturnStation();
         String rtString = trip.getReturnTime();
         LocalDateTime returnTime = LocalDateTime.parse(rtString);
         holder.returnStationName.setText(returnStation.getNimi());
-        holder.returnTime.setText(rtString.substring(11, 18));
-        holder.returnDate.setText(rtString.substring(0, 9));
+        holder.returnTime.setText(rtString.substring(11, 19));
+        holder.returnDate.setText(rtString.substring(0, 10));
 
         holder.duration.setText("" + LocalTime.MIN.plusSeconds(trip.getDuration()));
         holder.distance.setText(String.format("%dkm", trip.getDistanceMeters() / 1000));
